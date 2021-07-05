@@ -1,11 +1,10 @@
 import { useState } from "react"
 import Header from './components/Header'
 import Tasks from './components/Tasks'
-
-
+import AddTask from './components/AddTask'
 
 function App() {
-
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -27,6 +26,20 @@ function App() {
     }
   ]);
 
+  //on Add click
+  const onAddClick = () => {
+    setShowAddTask(!showAddTask);
+  }
+
+  //add Task
+  const addTask = (task) => {
+    console.log(task)
+    const id = Math.floor(Math.random()*10000)+1;
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+  }
+
+  //delete task
   const deleteTask = (id) => {
     console.log('delete', id)  
     setTasks(
@@ -34,6 +47,7 @@ function App() {
     )
   }
 
+  //toggle reminder state of a task
   const toggleTask = (id) => {
     console.log('toggle', id)
     setTasks(
@@ -45,7 +59,12 @@ function App() {
     
   return (
     <div className="container">
-      <Header title="Task Tracker"/>
+      <Header 
+        title="Task Tracker" 
+        onAddClick={onAddClick}
+        showAddTask={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTask}/>}
       {
         tasks.length ? <Tasks tasks={tasks} onDelete={deleteTask} toggleTask={toggleTask}/> : 'No task to show'
       }
