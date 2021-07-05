@@ -106,7 +106,19 @@ body {
   height: 20px;
 }
 
-footer {
+footer, #about{
   margin-top: 30px;
   text-align: center;
+}
+
+#version {
+  margin-bottom: 10px;
+}
+
+#aboutDev {
+  margin: 10px 0 30px 0;
+}
+
+#dev {
+  color: rgba(255, 0, 0, 0.5);
 }
