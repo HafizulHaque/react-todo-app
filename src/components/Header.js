@@ -1,9 +1,11 @@
 import propTypes from 'prop-types'
+import Button from './Button'
 
 function Header({title}) {
   return (
-    <header>
+    <header className='header'>
       <h1>{title}</h1>
+      <Button color='red' text='add me'/>
     </header>
   )
 }
