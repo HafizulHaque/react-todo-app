@@ -65,7 +65,7 @@ function App() {
           onAddClick={onAddClick}
           showAddTask={showAddTask}
         />
-        <Route path='/react-todo-app/' exact render={(props)=>(
+        <Route path={process.env.PUBLIC_URL + '/'} exact render={(props)=>(
           <>
             {showAddTask && <AddTask onAdd={addTask}/>}
             {
@@ -74,8 +74,8 @@ function App() {
           </>
         )} />
         
-        <Route path='/react-todo-app/about' component={About}/>
-        <Route path='/react-todo-app/' exact component={Footer}/>
+        <Route path={process.env.PUBLIC_URL + '/about'} component={About}/>
+        <Route path={process.env.PUBLIC_URL + '/'} exact component={Footer}/>
       </div>
     </Router>
     
