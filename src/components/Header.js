@@ -9,7 +9,7 @@ function Header({ title, onAddClick, showAddTask }) {
     <header className='header'>
       <h1>{title}</h1>
       {
-        location.pathname === '/' && 
+        location.pathname === process.env.PUBLIC_URL + '/' && 
         <Button 
           color={showAddTask ? 'red' : 'green'} 
           text= {showAddTask ? 'Close' : `Add`} 

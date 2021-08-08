@@ -14,7 +14,7 @@ function About() {
         Cell No: +8801818925451<br/>
         E-mail: hafizulhaque.cse.cuet@gmail.com<br/>
       </h4>
-      <Link to="/">Go Back</Link>
+      <Link to={process.env.PUBLIC_URL + '/'}>Go Back</Link>
     </div>
   )
 }
