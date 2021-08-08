@@ -23,3 +23,5 @@
 ## See developer Info
 
 **Click** on **About** *hyperlink* to see **Developer Info** 
+
+![Dev Info Page](/screenshot/dev.jpeg)
